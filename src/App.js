@@ -1,9 +1,10 @@
 import "./App.css";
+import HomeScreen from "./pages/HomeScreen";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Lets build netflix</h1>
+    <div className="app">
+      <HomeScreen />
     </div>
   );
 }
