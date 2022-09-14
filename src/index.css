@@ -6,4 +6,8 @@
   .banner_button {
     @apply cursor-pointer text-white outline-none border-none font-bold rounded-[0.2vw] px-8 mr-4 bg-[rgba(51,51,51,0.5)] py-2 hover:text-black hover:bg-[#e6e6e6] hover:transition-all hover:duration-200;
   }
+
+  .scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
