@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { auth } from "./firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./redux/userSlice";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   const user = useSelector(selectUser);
@@ -23,19 +24,19 @@ function App() {
         );
       } else {
         //Logged out
-        dispatch(logout);
+        dispatch(logout());
       }
     });
 
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
       <div className="bg-[#111]">
         <Routes>
           <Route path="/" element={user ? <HomePage /> : <LoginPage />} />
-          <Route path="/test" element={<h1>Hello </h1>} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </div>
     </BrowserRouter>
