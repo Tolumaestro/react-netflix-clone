@@ -10,4 +10,8 @@
   .scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  .input {
+    @apply outline-none h-[40px] mb-[14px] rounded-[5px] py-[5px] px-4;
+  }
 }

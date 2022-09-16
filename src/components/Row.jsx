@@ -24,23 +24,32 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
     <div className="text-white ml-5">
       <h1 className="text-2xl">{title}</h1>
 
-      <div className="flex overflow-y-hidden overflow-x-scroll p-5 scroll scrollbar">
+      <div className="flex overflow-y-hidden overflow-x-scroll p-5 scrollbar">
         {movies.map(
           (movie) =>
             ((isLargeRow && movie.poster_path) ||
               (!isLargeRow && movie.backdrop_path)) && (
-              <img
+              <div
                 className={`${
                   isLargeRow
-                    ? "max-h-[250px] hover:scale-[1.09]"
-                    : "max-h-[100px] hover:scale-[1.08]"
-                }  object-contain mr-[10px] w-full transition-all duration-500  hover:opacity-100`}
-                key={movie.id}
-                src={`${base_url}${
-                  isLargeRow ? movie.poster_path : movie.backdrop_path
-                }`}
-                alt="Movie"
-              />
+                    ? "min-w-[177px] hover:scale-[1.09]"
+                    : "min-w-[188px] hover:scale-[1.08]"
+                } transition-all duration-500  hover:opacity-100 `}
+              >
+                <img
+                  className={`${
+                    isLargeRow ? "max-h-[250px] " : "max-h-[100px] "
+                  }  object-contain mr-[10px] w-full `}
+                  key={movie.id}
+                  src={`${base_url}${
+                    isLargeRow ? movie.poster_path : movie.backdrop_path
+                  }`}
+                  alt="Movie"
+                />
+                <h1 className="pl-[5px]">
+                  {movie?.title || movie?.name || movie?.original_name}
+                </h1>
+              </div>
             )
         )}
       </div>

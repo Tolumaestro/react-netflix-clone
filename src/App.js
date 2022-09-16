@@ -1,11 +1,19 @@
 import "./App.css";
-import HomeScreen from "./pages/HomeScreen";
+import HomePage from "./pages/HomePage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
+  const user = 0;
   return (
-    <div className="bg-[#111]">
-      <HomeScreen />
-    </div>
+    <BrowserRouter>
+      <div className="bg-[#111]">
+        <Routes>
+          <Route path="/" element={user ? <HomePage /> : <LoginPage />} />
+          <Route path="/test" element={<h1>Hello </h1>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

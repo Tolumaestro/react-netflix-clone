@@ -7,7 +7,7 @@ const Banner = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await instance.get(requests.fetchNetflixOriginals);
+      const request = await instance.get(requests.fetchNetflixMovieOriginals);
 
       setMovie(
         request.data.results[
@@ -28,13 +28,13 @@ const Banner = () => {
   };
   return (
     <header
-      className={`bg-cover bg-center relative object-contain text-white h-[348px]`}
+      className={`bg-cover bg-center relative object-contain text-white h-[448px]`}
       style={{
         backgroundImage: `url("https://image.tmdb.org/t/p/original${movie?.backdrop_path}")`,
       }}
     >
       <div className="ml-[30px] pt-[140px] h-[190px]">
-        <h1 className="text-5xl font-extrabold pb-[0.3rem] ">
+        <h1 className="text-5xl font-extrabold pb-[1rem] ">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
         <div>
