@@ -34,7 +34,6 @@ const LoginPage = () => {
       </div>
 
       <div className="z-10 w-full text-white p-5 absolute top-[30%] left-0 right-0 mx-auto text-center">
-        (
         <>
           <h1 className="text-[3.125rem] mb-5">
             Unlimited films, TV programmes and more.

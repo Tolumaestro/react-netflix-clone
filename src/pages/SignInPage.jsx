@@ -48,7 +48,7 @@ const SignIn = () => {
         />
       </div>
 
-      <div className="z-10 w-full text-white p-5 absolute top-[30%] left-0 right-0 mx-auto text-center">
+      <div className="z-10 w-full text-white p-5 absolute top-[20%] left-0 right-0 mx-auto text-center">
         <div className="max-w-[400px] p-[70px] mx-auto bg-black opacity-[85]">
           <form className="flex flex-col">
             <h1 className="text-2xl mb-[25px] text-left">Sign In</h1>

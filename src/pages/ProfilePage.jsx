@@ -11,19 +11,19 @@ const ProfilePage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className=" text-white">
+    <div className=" text-white min-h-screen">
       <Nav />
-      <div className="flex flex-col w-6/12 mx-auto pt-[8%] max-w-[800px] pb-[50px]">
-        <h1 className="text-[60px] font-normal border-b border-b-[#282c2d] mb-[20px]">
+      <div className="flex flex-col w-8/12 md:w-6/12 mx-auto pt-[20%] md:pt-[8%] max-w-[800px] pb-[50px]">
+        <h1 className="text-[40px] md:text-[60px]  font-normal border-b border-b-[#282c2d] mb-[20px]">
           Edit Profile
         </h1>
-        <div className="flex">
+        <div className="flex flex-col md:flex-row">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117"
             alt="Avatar"
-            className="h-[100px]"
+            className="h-[100px] w-fit mb-[10px]"
           />
-          <div className="ml-[25px] flex-1">
+          <div className="md:ml-[25px] flex-1">
             <h2 className="bg-gray-400 p-[15px] text-[15px] pl-[20px]">
               {user?.email}
             </h2>
