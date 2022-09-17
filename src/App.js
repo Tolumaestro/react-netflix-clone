@@ -7,6 +7,8 @@ import { auth } from "./firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./redux/userSlice";
 import ProfilePage from "./pages/ProfilePage";
+import SignIn from "./pages/SignInPage";
+import SignUp from "./pages/SignUpPage";
 
 function App() {
   const user = useSelector(selectUser);
@@ -36,6 +38,8 @@ function App() {
       <div className="bg-[#111]">
         <Routes>
           <Route path="/" element={user ? <HomePage /> : <LoginPage />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </div>

@@ -18,8 +18,6 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
     fetchData();
   }, [fetchURL]);
 
-  console.log(movies);
-
   return (
     <div className="text-white ml-5">
       <h1 className="text-2xl">{title}</h1>
@@ -30,6 +28,7 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
             ((isLargeRow && movie.poster_path) ||
               (!isLargeRow && movie.backdrop_path)) && (
               <div
+                key={movie.id}
                 className={`${
                   isLargeRow
                     ? "min-w-[177px] hover:scale-[1.09]"
