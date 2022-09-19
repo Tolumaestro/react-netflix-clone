@@ -16,7 +16,7 @@ const SignIn = () => {
       )
       .then((authUser) => {
         console.log(authUser);
-        navigate("/");
+        navigate("/profile");
       })
       .catch((error) => alert(error.message));
   };

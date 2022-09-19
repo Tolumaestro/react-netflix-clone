@@ -9,9 +9,11 @@ import { login, logout, selectUser } from "./redux/userSlice";
 import ProfilePage from "./pages/ProfilePage";
 import SignIn from "./pages/SignInPage";
 import SignUp from "./pages/SignUpPage";
+import { selectSubscription, updateSub } from "./redux/subscriptionSlice";
 
 function App() {
   const user = useSelector(selectUser);
+  const subscription = useSelector(selectSubscription);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,6 +28,7 @@ function App() {
         );
       } else {
         //Logged out
+        dispatch(updateSub(null));
         dispatch(logout());
       }
     });
@@ -37,7 +40,20 @@ function App() {
     <BrowserRouter>
       <div className="bg-[#111]">
         <Routes>
-          <Route path="/" element={user ? <HomePage /> : <LoginPage />} />
+          <Route
+            path="/"
+            element={
+              user ? (
+                user && subscription ? (
+                  <HomePage />
+                ) : (
+                  <ProfilePage />
+                )
+              ) : (
+                <LoginPage />
+              )
+            }
+          />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/profile" element={<ProfilePage />} />
